@@ -17,7 +17,7 @@ function myFunction() {
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// nestedFunction() has access to the internal variable because items within a function have access to anything above the scope of the function, but not below it. Since internal exists in a scope one level above, it will not be a problem. If however, there was another nested function within the nested function curley brackets that defined a new variable, the nestedFunction could not access it.
 
 
 
@@ -30,10 +30,15 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  const array = [];
+  for(let i = 0; i < num; i++) {
+    array.push(i + 1)
   }
+  return array.reduce((val1, val2) => val1 + val2, 0)
+  }
+
+  console.log(summation(6))
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -60,10 +65,15 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(arr){
+    const displayNames = []
+    arr.forEach((animal) => {
+      displayNames.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`)
+    })
+    return displayNames
   }
   
+  console.log(animalNames(zooAnimals))
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
