@@ -26,13 +26,42 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
+
+`.map` - Performs some function on each item in an array, and creates a new array with the resulting items.
+
+use case for `.map` - If one had an array of strings with varying capitalizations (e.g. const animals = ['Cat', 'dog', 'monkey', Elephant]), and needed all letters to be lower case, they could use a .map function to do so. (e.g. const lcAnimals = animals.map((animal) => animal.toLowerCase)). IMPORTANT NOTE! this example was created prior to completed the 'index.js' portion of the sprint challenge. I was unaware at the time that it was very similar to one of the questions in the challenge!
+
+
+`.reduce` - combines all values of an array into one.
+
+use case for `.reduce` - If one had an array of values and needed to find the average value, they could use `.reduce` to add all values and divide by the length of the array (e.g. const numbers = [1,2,3,4,5]; const average = numbers.reduce((accumulator, current) => {accumulator + current, 0})/numbers.length). In this example, the function begins with a value of 0, because the number after the comma is the initial value of the function. It then iterates over each value in the array and adds it to the accumulator value. (e.g. 0+1=1; 1+2=3; 3+4=7; etc...)
+
+
+`.filter` - creates a new array of elements based on criteria provided within a function.
+
+use case for `.filter` - If one had an array of objects, and wanted to work with only those objects that meet a particular set of criteria without compromising the original data, they could use the `.filter` method. As an example, if we had an array called cities with name and population as keys and wanted an array of only those cities with over a certain population, we could use something like const bigCities = cities.filter((city) => city.population > "desired population size")
+
+
 2. Explain the difference between a callback and a higher order function.
+
+A higher order function is a function that uses another function as one or more of it's parameters. The callback is the function that gets passed as an argument to the higher order function.
 
 3. Explain what a closure is.
 
+A closure occurs when an element within a function reaches outside of that function to access a variable.
+
 4. Describe the four principles of the 'this' keyword.
 
+    1. When 'this' is used without context, it refers to the window/global space.
+    2. When 'this' is used within an object, it refers to the object who's scope it is within.
+    3. When a new object is created using an object creator, 'this' refers to the new object that has been created.
+    4. When a .call, or a .apply function is called on an object, 'this' refers to the object that was passed as an argument.
+
 5. Why do we need super() in an extended class?
+
+super() is used to apply the key, value pairs from the parent class to the newly created subclass
+
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
